@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0F172A;
+            color: #3B82F6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+            border: 2px solid #334155;
+            padding: 10px;
+            border-radius: 10px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            color: white;
+            z-index: 1;
+            background-color: #2713a6;
+        }
+
+
+        .logo {
+            font-weight: 600;
+        }
+
+        .navigation {
+            width: 40%;
+        }
+
+        .navigation nav ul {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navigation nav ul li {
+            display: inline;
+        }
+
+        .navigation nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navigation nav ul li a:hover {
+            color: #3B82F6;
+        }
+
+        .Action-icons {
+            width: 30%;
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+        }
+
+
+        .search-icon {
+            padding: 10px;
+            width: 60%;
+            border: 2px solid black;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .login-icon,
+        .cart-icon {
+            border-radius: 60%;
+        }
+
+        .login-icon:hover,
+        .cart-icon:hover {
+            cursor: pointer;
+        }
+
+        main {
+            margin: 10px;
+        }
+
+        .container {
+            border-radius: 10px;
+            width: 98%;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 50px;
+            margin: 20px;
+            align-items: center;
+        }
+
+        .right {
+            width: 50%;
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            padding: 10px;
+        }
+
+        .shop-btn {
+            padding: 10px;
+            font-size: 1.4rem;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: rgb(240, 136, 8);
+            color: white;
+            cursor: pointer;
+        }
+
+        .shop-btn:hover {
+            background-color: rgb(158, 115, 34);
+        }
+
+        .left {
+            width: 50%;
+            object-fit: cover;
+            padding: 10px;
+        }
+
+        .left img {
+            border-radius: 10px;
+            width: 70%;
+            height: 480px;
+            background: transparent;
+        }
+
+        .product-count {
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-count p:first-child,
+        .product-count p:last-child {
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:700px) {
+            header {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .navigation,
+            .Action-icons {
+                display: none;
+            }
+
+            .left {
+                display: none;
+            }
+
+            .right {
+                width: 100%;
+            }
+
+            .right p {
+                display: none;
+            }
+        }
+
+        .buy {
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: blue;
+            color: white;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .order-placed {
+            position: relative;
+        }
+
+        .info {
+            border: 2px solid black;
+            background-color: white;
+            position: absolute;
+            color: black;
+            padding: 10px;
+            font-size: 1.3rem;
+            bottom: 0;
+            right: 0;
+            transition: .5s ease-in-out;
+            transform: translate(5%, 5%);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Quick Shopping</div>
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Details</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="Action-icons">
+            <input type="text" placeholder="Enter The Products" class="search-icon">
+            <img class="login-icon"
+                src="https://tse2.mm.bing.net/th/id/OIP.eBlxlju7b37M-ogYbb6h8gHaHw?pid=Api&P=0&h=180" alt="Login"
+                width="50">
+            <img class="cart-icon" src="https://tse2.mm.bing.net/th/id/OIP.xbQblG3JpXg_vlc8W3nxfwHaHa?pid=Api&P=0&h=180"
+                alt="Cart" width="50"><sup><span class="cart-count">0</span></sup>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <!-- <div class="left">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.eGfA_0PdLPwqdCK3eGtmVAHaEq?pid=Api&P=0&h=180" alt="">
+            </div>
+            <div class="right">
+                <h1>Product Name</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos odit nobis repudiandae beatae incidunt
+                    esse tempora placeat quas distinctio consequuntur.
+                </p>
+                <p>rating</p>
+                <p>Price</p>
+                <div class="product-count">
+                    <p class="add">+</p>
+                    <p class="count">0</p>
+                    <p class="sub">-</p>
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div> -->
+        </section>
+
+        <div class="related-content">
+
+        </div>
+
+        <div class="order-placed">
+            <p class="info">order Placed</p>
+        </div>
+    </main>
+
+    <script>
+        let products = JSON.parse(localStorage.getItem("viewProduct")) || [];
+        console.log(products);
+
+        let container = document.querySelector(".container");
+
+        products.forEach(product => {
+            let leftSide = document.createElement("div");
+            leftSide.className = "left";
+            leftSide.innerHTML = `<img src=${product.image} alt="Product Image">`;
+
+            let rightSide = document.createElement("div");
+            rightSide.className = "right";
+            async function data() {
+                let response = await fetch("https://fakestoreapi.com/products");
+                let data = await response.json();
+
+                data.forEach(data => {
+                    if (product.title === data.title) {
+                        rightSide.innerHTML = `<h1>${product.title}</h1>
+                            <p>${data.description}</p>
+                            <p>Rating : ${data.rating.rate}</p>
+                            <p>Price : ₹${data.price}</p>
+                            <button class="buy" onClick="myfunction()">Buy</button>`;
+                    }
+                })
+            }
+
+            data();
+            container.appendChild(leftSide);
+            container.appendChild(rightSide);
+        })
+
+        let order = document.querySelector(".order-placed");
+        let info = document.querySelector(".info");
+        order.style.display = "none";
+        function myfunction() {
+            if(order.style.display === 'none') {
+                order.style.display = "block";
+                info.style.border = "3px solid green";
+            }
+            else {
+                order.style.display = "block";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

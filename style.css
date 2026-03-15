@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0F172A;
+    color: #3B82F6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    border: 2px solid #334155;
+    padding: 10px;
+    border-radius: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    color: white;
+    z-index: 1;
+    background-color: #2713a6;
+
+}
+
+
+.logo {
+    font-weight: 600;
+}
+
+.navigation {
+    width: 40%;
+}
+
+.navigation nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation nav ul li {
+    display: inline;
+}
+
+.navigation nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation nav ul li a:hover {
+    color: #3B82F6;
+}
+
+.Action-icons {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+
+.search-icon {
+    padding: 10px;
+    width: 60%;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.login-icon,
+.cart-icon {
+    border-radius: 60%;
+}
+
+.login-icon:hover,
+.cart-icon:hover {
+    cursor: pointer;
+}
+
+
+/* main */
+
+main {
+    margin: 10px;
+}
+
+.container {
+    background-image: url("https://tse3.mm.bing.net/th/id/OIP.fUWfcrm6n5Fhj468XH1D8gHaEo?pid=Api&P=0&h=180");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    width: 98%;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    margin: 20px;
+}
+
+.left {
+    width: 50%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.shop-btn {
+    padding: 10px;
+    font-size: 1.4rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(240, 136, 8);
+    color: white;
+    cursor: pointer;
+}
+
+.shop-btn:hover {
+    background-color: rgb(158, 115, 34);
+}
+
+.right {
+    width: 50%;
+    object-fit: cover;
+}
+
+.right img {
+    border-radius: 10px;
+    width: 100%;
+    background: transparent;
+    animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translate(20px, 20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width:700px) {
+    header {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation,
+    .Action-icons {
+        display: none;
+    }
+
+    .right {
+        display: none;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .left p {
+        display: none;
+    }
+
+}
+
+.categories-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    padding: 20px;
+    background-color: white;
+    align-items: center;
+    text-align: center;
+}
+
+.categories-section div {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.categories-section div a {
+    text-decoration: none;
+}
+
+.features-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(10, 20, 132);
+    padding: 20px;
+}
+
+.card {
+    width: 25%;
+    border: 5px solid black;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: #a6136b;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card-header img {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.addtocart,
+.view {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(13, 13, 239);
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+
+.addtocart:hover,
+.view:hover {
+    background-color: rgb(68, 68, 205);
+}
+
+.deal,
+.trend,
+.store {
+    text-align: center;
+    line-height: 1.4;
+}
+
+.big-sale,
+.trending-product,
+.store-features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: rgb(159, 200, 12);
+}
+
+.big-sale .card {
+    background-color: rgb(221, 120, 12);
+}
+
+.discount {
+    text-decoration: line-through;
+}
+
+.trending-product {
+    background-color: #2713a6;
+}
+
+.trending-product .card {
+    background-color: rgb(149, 25, 56);
+}
+
+.store-features {
+    padding: 10px;
+    justify-content: space-around;
+    background-color: #19841e;
+}
+
+.store-one {
+    font-size: 1.5rem;
+    color: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.store-btn {
+    padding: 10px;
+    font-size: 1.4rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #3B82F6;
+    cursor: pointer;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.overlay {
+    position: relative;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.login-page {
+    width: 30%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border: 2px solid black;
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+    color: black;
+}
+
+.login-text {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#close {
+    cursor: pointer;
+}
+
+#email,
+#password,
+.login-btn {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.login-btn {
+    background-color: blue;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+}

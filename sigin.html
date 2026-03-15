@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigin</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(white, blue) no-repeat;
+            min-height: 100vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        main {
+            width: 400px;
+        }
+        
+        form {
+            width: 100%;
+            border: 2px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.5rem;
+            line-height: 0.9;
+        }
+
+        form label {
+            width: 150px;
+        }
+        form input, form select {
+            flex: 1;
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        form input:hover {
+            flex: 1;
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        form button {
+            padding: 10px;
+            background: blue;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        form button:hover {
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sigin</h1>
+    </header>
+
+    <main>
+        <form action="#" method="get">
+            <label for="name">Name : </label>
+            <input type="text" name="name" id="name" placeholder="Enter Your Name" required autofocus="on"> <br>
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email" placeholder="Enter Your Email" required> <br>
+            <label for="password">Password : </label>
+            <input type="password" name="password" id="password" minlength="8" placeholder="Enter Your Password" required> <br>
+            <label for="confirmpassword">Confirm Password : </label>
+            <input type="password" name="confirmpassword" id="confirmpassword" minlength="8" placeholder="Enter Your Confirm Password" required> <br>
+            <button class="btn" type="submit">Button</button>
+        </form>
+    </main>
+
+    <script>
+        let nameElement = document.querySelector("#name");
+        let emailElement = document.querySelector("#email");
+        let passwordElement = document.querySelector("#password");
+        let confirmpasswordElement = document.querySelector("#confirmpassword");
+        let btn = document.querySelector(".btn");
+
+        let Detail = [];
+
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            let nameValue = nameElement.value;
+            let emailValue = emailElement.value;
+            let passwordValue = passwordElement.value;
+            let confirmpasswordValue = confirmpasswordElement.value;
+            if (nameValue === "" || emailValue === "" || passwordValue === "" || confirmpasswordValue === "") {
+                alert("Enter the Details");
+                return;
+            }
+            let existingUser = Detail.find(function(e) {
+                return e.email === emailValue;
+            })
+
+            if(existingUser) {
+                alert ("Email Already Exist");
+                return;
+            }
+            if (passwordValue === confirmpasswordValue) {
+                Detail.push({
+                    name : nameValue, 
+                    email : emailValue,
+                    password : passwordValue,
+                })
+                nameElement.value = "";
+                emailElement.value = "";
+                passwordElement.value = "";
+                confirmpasswordElement.value = "";
+            }
+            else {
+                alert("Password Mismatch");
+            }
+            
+            saveData();
+        })
+
+        function saveData() {
+            localStorage.setItem("Details", JSON.stringify(Details));
+        }
+
+        function loadTask() {
+            return JSON.parse(localStorage.getItem("Details")) || []
+        }
+
+        Detail = loadTask();
+
+        console.log(Detail);
+    </script>
+</body>
+</html>
